@@ -1,3 +1,5 @@
-export default {
-  base: './' // important pour un build SPA statique
-};
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  base: '/showcase-lekinff/'
+});
