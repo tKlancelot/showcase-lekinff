@@ -1,0 +1,31 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--size-4);
+    background-color:var(--color-container);
+    /* background-image: url(/assets/textures/fabric-dark.png);
+    background-blend-mode: screen; */
+    border-bottom: 1px solid var(--color-primary-opacity-20);
+}
+
+.navbar a{
+    text-underline-offset: 8px;
+    transition: var(--transition-ease);
+}
+
+.navbar li{
+    min-width: 64px;
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        color: var(--text-primary);
+    }
+}
+

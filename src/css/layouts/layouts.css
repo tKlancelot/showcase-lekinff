@@ -1,0 +1,23 @@
+.lt-page{
+    display: flex;
+    gap: var(--gap-4);
+    padding: var(--size-6);
+    width: 100%;
+    height: 100%;
+}
+
+.form-row{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row-upload{
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    gap: var(--gap-2);
+    height: 100%;
+}
+
+
+

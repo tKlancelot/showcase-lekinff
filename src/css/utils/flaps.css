@@ -1,0 +1,34 @@
+.flaps{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.flap{
+    --flap-basis: 50%;
+    flex-basis: var(--flap-basis);
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    img{
+        object-fit: cover;
+    }
+}
+
+.flap-25{
+    --flap-basis: 25%;
+}
+
+.flap-40{
+    --flap-basis: 40%;
+}
+
+.flap-60{
+    --flap-basis: 60%;
+}
+
+.flap-75{
+    --flap-basis: 75%;
+}
+
+

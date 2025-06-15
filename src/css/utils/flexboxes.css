@@ -1,0 +1,49 @@
+.lt-stack{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-2);
+}
+
+.lt-frame{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+}
+
+/* JUSTIFY CONTENT  */
+
+.u-j-between{
+    justify-content: space-between;
+}
+
+/* ALIGN ITEMS  */
+
+.u-a-i-center{
+    align-items: center;
+}
+
+/* PLACE CONTENT  */
+
+.u-p-c-end{
+    place-content: end;
+}
+
+/* ALIGN JUSTIFY  */
+
+.u-a-j-center{
+    align-items: center;
+    justify-content: center;
+}
+
+/* PLACE ITEMS  */
+
+.u-p-i-center{
+    place-items: center;
+}
+
+
+/* FLEX-GROW  */
+
+.u-flex-grow-1{
+    flex-grow: 1;
+}

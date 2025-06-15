@@ -1,0 +1,27 @@
+/* custom scrollbar  */
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-opacity-20);
+    border-radius: var(--radii-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary-opacity-40);
+}
+
+.scroll-container {
+    overflow: auto;
+    padding-right: 8px;
+    box-sizing: content-box;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 0px;
+    border-radius: 4px;
+}

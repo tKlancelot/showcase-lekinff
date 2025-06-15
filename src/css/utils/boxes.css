@@ -1,0 +1,32 @@
+.lt-box{
+    --box-level:2;
+    --box-radius: var(--radius-1);
+    --box-padding: var(--size-2);
+    --box-gap: var(--gap-2);
+    gap: var(--box-gap);
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.lt-box.lt-box-level-sm{
+    --box-level: 1;
+    --box-padding: var(--size-1);
+    --box-gap: var(--gap-1);
+}
+
+.lt-box.lt-box-level-lg{
+    --box-level: 3;
+    --box-radius: var(--radii-3);
+    --box-padding: var(--size-4);
+    --box-gap: var(--gap-4);
+}
+
+.lt-box.lt-box-level-xl{
+    --box-level: 4;
+    --box-radius: var(--radii-4);
+    --box-padding: var(--size-6);
+    --box-gap: var(--gap-6);
+}

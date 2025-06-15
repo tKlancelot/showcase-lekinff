@@ -1,0 +1,39 @@
+/* GUTTERS */
+
+.u-gap-0{
+    gap: 0px;
+}
+
+.u-gap-2{
+    gap: var(--gap-2);
+}
+
+.u-gap-4{
+    gap: var(--gap-4);
+}
+
+.u-gap-6{
+    gap: var(--gap-6);
+}
+
+.u-gap-8{
+    gap: var(--gap-8);
+}
+
+/* PADDINGS  */
+
+.u-p-2{
+    padding: var(--size-2);
+}
+
+.u-p-4{
+    padding: var(--size-4);
+}
+
+.u-p-6{
+    padding: var(--size-6);
+}
+
+.u-p-8{
+    padding: var(--size-8);
+}

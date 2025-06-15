@@ -1,0 +1,118 @@
+:root{
+
+    /* FONTS  */
+    --ff-primary: 'Rubik', sans-serif;
+    --ff-secondary: 'Anton', sans-serif;
+
+    /* COLORS */
+
+    --color-primary: rgb(14, 120, 219);
+    --color-primary-hover: oklch(from var(--color-primary) calc(l * .90) c h);
+    --color-primary-active: oklch(from var(--color-primary) calc(l * .80) c h);
+
+    --color-primary-opacity-4:  rgba(14, 120, 219, 0.04);
+    --color-primary-opacity-10: rgba(14, 120, 219, 0.1);
+    --color-primary-opacity-20: rgba(14, 120, 219, 0.2);
+    --color-primary-opacity-40: rgba(14, 120, 219, 0.4);
+    --color-primary-opacity-60: rgba(14, 120, 219, 0.6);
+
+
+    --color-ui-white:#fff;
+    --color-ui-black:#000;
+
+    --color-ui-white-opacity-92:rgba(255, 255, 255, 0.92);
+    --color-ui-white-opacity-80:rgba(255, 255, 255, 0.8);
+    --color-ui-white-opacity-60:rgba(255, 255, 255, 0.6);
+    --color-ui-white-opacity-40:rgba(255, 255, 255, 0.4);
+    --color-ui-white-opacity-20:rgba(255, 255, 255, 0.2);
+
+    --color-ui-border:var(--color-ui-white-opacity-20);
+
+    --color-danger: #e74c3c;
+    --color-danger-hover: #c0392b;
+    --color-danger-active: #a93226;
+    --color-danger-opacity-10: rgba(231, 76, 60, 0.1);
+    --color-info: rgb(96, 135, 255);
+    --color-info-active: rgb(49, 84, 189);
+    --color-info-opacity-10: rgba(96, 135, 255, 0.1);
+    --color-success: #2e9e5b;
+    --color-success-hover: #27924f;
+    --color-success-active: #1f7a40;
+    --color-success-opacity-10: rgba(46, 158, 91, 0.1);
+    --color-warning: #f5b93b;
+    --color-warning-hover: #e0a72f;
+    --color-warning-active: #c38d1e;
+    --color-warning-opacity-10: rgba(245, 185, 59, 0.1);
+
+    --color-background: #050b14; 
+    --color-container:  #091420; 
+    --color-overlay:    #12283d;
+    
+    /* GRADIENTS  */
+    --color-background-gradient: linear-gradient(180deg,var(--color-background) 0%, var(--color-container) 100%);
+    --gradient-primary: linear-gradient(to top, #022D54, #031A2D);
+
+    /* SIZES  */
+    --size-0: 0px;
+    --size-1: 4px;
+    --size-2: 8px;
+    --size-3: 12px;
+    --size-4: 16px;
+    --size-5: 20px;
+    --size-6: 24px;
+    --size-7: 32px;
+    --size-8: 40px;
+    --size-9: 48px;
+    --size-10: 64px;
+
+    /* RADIUS  */
+    --radius-1: var(--size-1);
+    --radii-2: var(--size-2);
+    --radii-3: var(--size-3);
+    --radii-4: var(--size-4);
+
+    /* GAP  */
+    --gap-1: var(--size-1);
+    --gap-2: var(--size-2);
+    --gap-3: var(--size-3);
+    --gap-4: var(--size-4);
+    --gap-5: var(--size-5);
+    --gap-6: var(--size-6);
+    --gap-7: var(--size-7);
+    --gap-8: var(--size-8);
+    --gap-9: var(--size-9);
+    --gap-10: var(--size-10);
+
+    /* SHADOWS  */
+    --shadow-1: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* TEXT-COLORS */
+    --text-primary: var(--color-ui-white-opacity-92);
+    --text-secondary: var(--color-ui-white-opacity-60);
+    --text-tertiary: var(--color-ui-white-opacity-40);
+    --text-white: var(--color-ui-white);
+    --text-inverted: var(--color-ui-black);
+    /* --text-gradient:linear-gradient(180deg, var(--color-primary-active), var(--color-primary), var(--text-secondary)); */
+    --text-gradient:linear-gradient(to bottom, transparent, var(--color-ui-white-opacity-20) 100%),var(--color-primary-active) repeating-linear-gradient(45deg, transparent, transparent 35px,var(--color-primary-opacity-10) 35px, var(--color-primary-opacity-40) 70px);
+
+    /* BORDER COLORS  */
+    --border-color: var(--color-ui-border);
+    --border-color-accentuated: var(--color-ui-white-opacity-80);
+    --border-color-primary: var(--color-primary);
+
+
+
+    --font-size-0: 0.75rem; /* 12px */
+    --font-size-1: 0.875rem; /* 14px */
+    --font-size-2: 1rem; /* 16px */
+    --font-size-3: 1.25rem; /* 20px */
+    --font-size-4: 1.5rem; /* 24px */               
+    --font-size-5: 2rem;
+    --font-size-6: 3rem;
+    --font-size-7: 4rem;
+    
+    --transition-ease:0.32s ease-in-out;
+
+}
+

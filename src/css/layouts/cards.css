@@ -1,0 +1,54 @@
+.lt-card{
+    --card-border:1px solid var(--color-primary-opacity-20);
+    --card-border-color-hover:var(--color-primary-opacity-40);
+    --card-bg: var(--color-primary-opacity-20);
+    --card-bg-hover: var(--color-primary-opacity-4);
+    --card-radius: var(--radii-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4);
+    padding: var(--size-4);
+    transition: all 0.12s ease;
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background-color: var(--card-bg);
+    /* cursor: pointer; */
+    min-height: 160px;
+    transform-origin: center;
+    color: var(--text-secondary);
+    &:hover{
+        background-color: var(--card-bg-hover);
+        border-color: var(--card-border-color-hover);
+    }
+}
+
+.lt-card-header{
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* font-family: var(--ff-secondary); */
+}
+
+.lt-card-body{
+    color: var(--color-primary);
+    font-size: var(--font-size-1);    
+}
+
+.lt-card-header svg{
+    stroke: var(--color-primary);
+    fill: var(--color-primary);
+}
+
+.lt-card:active{
+    /* transform: scale(0.99); */
+    transition: all 0.12s ease;
+}
+
+.lt-card:not(.featured){
+    cursor: pointer;
+    &:active{
+        transform: scale(0.99);
+    }
+}

@@ -1,0 +1,100 @@
+.u-min-w-24{
+    min-width: 24px;
+}
+
+.u-min-w-32{
+    min-width: 32px;
+}
+
+.u-min-w-120{
+    min-width: 120px;
+}
+
+.u-min-w-200{
+    min-width: 200px;
+}
+
+.u-min-w-240{
+    min-width: 240px;
+}
+
+.u-min-w-320{
+    min-width: 320px;
+}
+
+.u-min-w-400{
+    min-width: 400px;
+}
+
+/* WIDTH  */
+
+.u-w-50-prc{
+    width: 50%;
+}
+
+.u-w-100{
+    width: 100%;
+}
+
+.u-w-240{
+    width: 240px;
+}
+
+/* MAX WIDTH  */
+
+.u-max-w-240{
+    max-width: 240px;
+}
+
+.u-max-w-320{
+    max-width: 320px;
+}
+
+.u-max-w-400{
+    max-width: 400px;
+}
+
+.u-max-w-480{
+    max-width: 480px;
+}
+
+/* HEIGHT  */
+
+.u-h-100{
+    height: 100%;
+}
+
+/* MIN HEIGHT  */
+
+.u-min-h-160{
+    min-height: 160px;
+}
+
+.u-min-h-320{
+    min-height: 320px;
+}
+
+.u-min-h-400{
+    min-height: 400px;
+}
+
+/* MAX HEIGHT  */
+
+.u-max-h-160{
+    max-height: 160px;
+}
+
+.u-max-h-240{
+    max-height: 240px;
+}
+
+.u-max-h-400{
+    max-height: 400px;
+}
+
+/* ASPECT RATIO */
+
+.u-aspect-ratio-1-1{
+    aspect-ratio: 1 / 1;
+}
+

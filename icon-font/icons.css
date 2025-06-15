@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.woff?9d813ad7014e42538b19293a5b614cb8") format("woff"),
+url("./icons.woff2?9d813ad7014e42538b19293a5b614cb8") format("woff2");
+}
+
+i[class^="lt-icon-"]:before, i[class*=" lt-icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lt-icon-variables:before {
+    content: "\f101";
+}
+.lt-icon-utils:before {
+    content: "\f102";
+}
+.lt-icon-send:before {
+    content: "\f103";
+}
+.lt-icon-search:before {
+    content: "\f104";
+}
+.lt-icon-organisms:before {
+    content: "\f105";
+}
+.lt-icon-molecules:before {
+    content: "\f106";
+}
+.lt-icon-font-system:before {
+    content: "\f107";
+}
+.lt-icon-download-test:before {
+    content: "\f108";
+}
+.lt-icon-door-logout:before {
+    content: "\f109";
+}
+.lt-icon-close:before {
+    content: "\f10a";
+}
+.lt-icon-caret-down:before {
+    content: "\f10b";
+}
+.lt-icon-breakpoints:before {
+    content: "\f10c";
+}
+.lt-icon-base:before {
+    content: "\f10d";
+}
+.lt-icon-back-arrow:before {
+    content: "\f10e";
+}
+.lt-icon-atoms:before {
+    content: "\f10f";
+}

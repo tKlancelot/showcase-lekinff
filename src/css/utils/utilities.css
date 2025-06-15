@@ -1,0 +1,198 @@
+/* BORDER  */
+
+.u-border-1{
+    border-width: 1px;
+    border-style: solid;
+}
+
+.u-border-primary{
+    border-color: var(--color-primary);
+}
+
+/* BG COLOR  */
+
+.u-bg-gradient{
+    background-image:linear-gradient(0deg, var(--color-primary-opacity-20), var(--color-primary-opacity-10));
+}
+
+.u-bg-primary-opacity-40{
+    background-color: var(--color-primary-opacity-40);
+}
+
+.u-bg-primary-opacity-20{
+    background-color: var(--color-primary-opacity-20);
+}
+
+.u-bg-primary-opacity-10{
+    background-color: var(--color-primary-opacity-10);
+}
+
+/* TEXT COLOR  */
+
+.u-text-secondary{
+    color: var(--color-ui-white-opacity-60);
+}
+
+.u-text-primary{
+    color: var(--color-ui-white-opacity-80);
+}
+
+.u-text-danger{
+    color: var(--color-danger);
+}
+
+.u-text-white{
+    color: var(--color-ui-white);
+}
+
+.u-text-white-opacity-92{
+    color: var(--color-ui-white-opacity-92);
+}
+
+.u-text-white-opacity-80{
+    color: var(--color-ui-white-opacity-80);
+}
+
+.u-text-gradient-primary{
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* TEXT CASE  */
+
+.u-text-uppercase{
+    text-transform: uppercase;
+}
+
+/* IMAGE */
+
+.u-object-fit-cover{
+    object-fit: cover;
+}
+
+/* TEXT CLAMP  */
+
+.u-text-clamp{
+    --clamp-lines: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--clamp-lines);
+    height: max-content;
+    overflow: hidden;
+}
+
+.u-text-clamp.u-text-clamp-3{
+    --clamp-lines: 3;
+}
+
+.u-text-capitalize{
+    text-transform: capitalize;
+}
+
+.u-text-first-letter-uppercase::first-letter{
+    text-transform: uppercase;
+}
+
+.u-text-style-italic{
+    font-style: italic;
+}
+
+.u-text-truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    max-height: 150px;
+}
+
+.u-text-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* FONT WEIGHT  */
+
+.u-fw-bold{
+    font-weight: bold;
+}
+
+/* FONT SIZE  */
+
+.u-fs-0{
+    font-size:var(--font-size-0);
+}
+
+.u-fs-1{
+    font-size:var(--font-size-1);
+}
+
+.u-fs-2{
+    font-size:var(--font-size-2);
+}
+
+.u-fs-3{
+    font-size:var(--font-size-3);
+}
+
+/* PADDING  */
+
+.u-p-1{
+    padding: var(--size-1);
+}
+
+.u-p-2{
+    padding: var(--size-2);
+}
+
+.u-p-3{
+    padding: var(--size-3);
+}
+
+.u-p-4{
+    padding: var(--size-4);
+}
+
+/* LINE-HEIGHT  */
+
+.u-lh-2{
+    line-height:calc(var(--font-size-2) * 2);
+}
+
+/* TEXT ALIGN  */
+
+.u-text-a-center{
+    text-align: center;
+}
+
+.u-text-a-justify{
+    text-align: justify;
+}
+
+/* Z-INDEX */
+
+.u-z-i-9{
+    z-index: 9;
+}
+
+/* OVERFLOW  */
+
+.u-overflow-hidden{
+    overflow: hidden;
+}
+
+.u-overflow-y-auto{
+    overflow-y: auto;
+}
+
+.u-m-auto{
+    margin: auto;
+}
+
+/* CURSOR  */
+
+.u-cursor-pointer{
+    cursor: pointer;
+}

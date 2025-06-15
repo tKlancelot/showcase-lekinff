@@ -1,0 +1,51 @@
+.lt-grid {
+    --grid-column:3;
+    --grid-row: 3;
+    --grid-min-max: 220px;
+    display: grid;
+    gap: var(--gap-2);
+    grid-template-columns: repeat(var(--grid-column), 1fr);
+    grid-template-rows: repeat(var(--grid-row), 1fr);
+    height: 100%;
+}
+
+
+.lt-grid.grid-flexible{
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-max), 1fr));
+    grid-template-rows:auto;
+}
+
+/* COLUMNING  */
+
+.u-col-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.u-col-2 {
+    grid-column: span 2;
+}
+
+.u-col-4 {
+    grid-column: span 4;
+}
+
+.u-col-5 {
+    grid-column: span 5;
+}
+
+.u-col-6 {
+    grid-column: span 6;
+}
+
+.u-col-8 {
+    grid-column: span 8;
+}
+
+.u-col-10 {
+    grid-column: span 10;
+}
+
+.u-col-12 {
+    grid-column: span 12;
+}

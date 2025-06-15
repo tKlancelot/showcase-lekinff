@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Anton";
+    src: url("/fonts/Anton/Anton-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 400;
+}
