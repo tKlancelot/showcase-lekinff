@@ -20,7 +20,7 @@ export async function HomeController() {
   let splide = document.querySelector('.splide');
 
   if (splide){
-      new Splide( '.splide', {
+      new window.Splide( '.splide', {
         type   : 'fade',
         autoplay: true,
         wheel: true,
