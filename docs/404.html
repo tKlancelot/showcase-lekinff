@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Lekinff</title>
+    <link rel="stylesheet" href="/showcase-lekinff/vendors/splide-slide.min.css">
+  <script type="module" crossorigin src="/showcase-lekinff/assets/index-BgjbEW55.js"></script>
+  <link rel="stylesheet" crossorigin href="/showcase-lekinff/assets/index-CnDq-zcj.css">
+</head>
+<body>
+  <div id="app"></div>
+  <modal-dialog id="modal-test" modal-title="My title" class="modal modal-color-scheme-primary" max-width="480">
+    <div class="lt-frame u-gap-4">
+      <p class="u-min-h-160">modal test</p>
+      <button class="btn btn-color-scheme-primary" data-modal-dismiss>Fermer</button>
+    </div>
+  </modal-dialog>
+  <modal-dialog id="modal-login" modal-title="Login" class="modal modal-color-scheme-primary" max-width="480">
+    <div class="lt-frame u-gap-4">
+        <form class="form lt-frame" id="login-form" action="/api/login" method="POST">
+            <div class="form-row">
+                <!-- <label for="username">Username</label> -->
+                <input class="input" type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="form-row">
+                <!-- <label for="password">Password</label> -->
+                <input class="input" type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-row u-p-c-end">
+                <button class="btn btn-color-scheme-primary" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+  </modal-dialog>
+  <modal-dialog id="modal-add-setting" modal-title="Add a setting" class="modal modal-color-scheme-primary" max-width="520">
+    <div class="lt-frame u-gap-4 u-min-w-400">
+    <form id="setting-form" class="lt-frame"> 
+        <div class="form-row">
+            <input class="input" placeholder="Key" type="text" id="key" name="key" required>
+        </div>
+
+        <div class="form-row">
+            <textarea class="textarea u-min-h-160" placeholder="Value" id="value" name="value" required></textarea>
+        </div>
+
+        <div class="form-row">
+            <!-- Remplacement du select par custom-select -->
+            <custom-select id="type">
+                <option value="text">Texte</option>
+                <option value="image">Image</option>
+                <option value="json">JSON</option>
+            </custom-select>
+            <!-- Champ caché pour envoyer la sélection -->
+            <input type="hidden" id="hiddenType" name="type" value="text"/>
+        </div>
+
+        <!-- Champ pour l'image -->
+        <div id="image-upload" class="lt-box form-row-upload" style="display: none;">
+            <label for="image">Choisir une image</label>
+            <input type="file" id="image-settings" name="image" accept="image/*">
+            <img id="preview-settings" class="u-w-100 u-mt-2 u-max-h-160 u-object-fit-cover" style="display:none;padding: 0.5rem;" />
+        </div>
+
+        <button class="btn btn-color-scheme-primary btn-size-lg" type="submit">Ajouter</button>
+    </form>
+    </div>
+  </modal-dialog>
+  <modal-dialog id="modal-add-user" modal-title="Add a user" class="modal modal-color-scheme-primary" max-width="480">
+    <form id="add-user-form" class="lt-frame">
+        <div class="form-row">
+            <input class="input" placeholder="Username" type="text" id="user-username" name="username" required>
+        </div>
+        <div class="u-col-row u-gap-2">
+          <div class="form-row u-col-6">
+              <input class="input" placeholder="Password" type="password" id="user-password" name="password" required>
+          </div>
+          <div class="form-row u-col-6">
+              <input class="input" placeholder="Confirm password" type="password" id="user-confirm-password" name="confirm-password" required>
+          </div>
+        </div>
+        <div class="form-row">
+            <custom-select id="role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </custom-select>
+            <input type="hidden" id="hiddenRole" name="role" value="user"/>
+        </div>
+        <div class="form-row">
+            <div class="lt-box form-row-upload">
+                <label for="image">
+                    <span>Upload a photo</span>
+                </label>
+                <input type="file" name="mainPicture" id="main-picture" accept="image/*">
+                <img id="preview" class="u-w-100 u-mt-2" style="display:none;padding: 0.5rem;" />
+            </div>  
+                                
+        </div>
+    
+        <div class="form-row">
+            <button class="btn btn-color-scheme-primary" type="submit">Add user</button>
+        </div>
+    </form>
+  </modal-dialog>
+    <script src="/showcase-lekinff/vendors/splide-slide.min.js"></script>
+</body>
+</html>

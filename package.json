@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
-    "deploy": "rm -rf docs && vite build && mv dist docs"
+    "deploy": "rm -rf docs && npm run build && mv dist docs"
   },
   "dependencies": {
     "universal-router": "^10.0.0"
