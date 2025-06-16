@@ -17,31 +17,31 @@ export async function HomeController() {
   console.log("HomeController: Page logic for Home");
   // Ajoute ici ton code spécifique à Home
 
-  let splide = document.querySelector('.splide');
+  const splideElement = document.querySelector('.splide');
 
-  if (splide){
-      new window.Splide( '.splide', {
-        type   : 'fade',
-        autoplay: true,
-        wheel: true,
-        speed: 1500,
-        arrows: false,
-        rewind: true,
-        interval: 6000,
-        perPage: 1,
-        perMove: 1,
-        breakpoints: {
-          1024: {
-            perPage: 1,
-          },
-          640: {
-            perPage: 1,
-          },
-        }
-      } );
-      splide.mount();
-  } 
-
+  if (splideElement) {
+    // Crée une instance Splide avec la bonne classe, puis monte-la
+    const splideInstance = new window.Splide(splideElement, {
+      type: 'fade',
+      autoplay: true,
+      wheel: true,
+      speed: 1500,
+      arrows: false,
+      rewind: true,
+      interval: 6000,
+      perPage: 1,
+      perMove: 1,
+      breakpoints: {
+        1024: {
+          perPage: 1,
+        },
+        640: {
+          perPage: 1,
+        },
+      }
+    });
+    splideInstance.mount();
+  }
   // let loginFrame = document.querySelector('#login');  
   let loginForm = document.getElementById('login-form');
 
