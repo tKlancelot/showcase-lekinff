@@ -17,26 +17,30 @@ export async function HomeController() {
   console.log("HomeController: Page logic for Home");
   // Ajoute ici ton code spécifique à Home
 
-  let splide = new Splide( '.splide', {
-    type   : 'fade',
-    autoplay: true,
-    wheel: true,
-    speed: 1500,
-    arrows: false,
-    rewind: true,
-    interval: 6000,
-    perPage: 1,
-    perMove: 1,
-    breakpoints: {
-      1024: {
+  let splide = document.querySelector('.splide');
+
+  if (splide){
+      new Splide( '.splide', {
+        type   : 'fade',
+        autoplay: true,
+        wheel: true,
+        speed: 1500,
+        arrows: false,
+        rewind: true,
+        interval: 6000,
         perPage: 1,
-      },
-      640: {
-        perPage: 1,
-      },
-    }
-  } );
-  splide.mount();
+        perMove: 1,
+        breakpoints: {
+          1024: {
+            perPage: 1,
+          },
+          640: {
+            perPage: 1,
+          },
+        }
+      } );
+      splide.mount();
+  } 
 
   // let loginFrame = document.querySelector('#login');  
   let loginForm = document.getElementById('login-form');
