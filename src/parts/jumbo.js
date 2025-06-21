@@ -6,7 +6,7 @@ export default function Jumbo() {
            <div class="lt-frame u-gap-8 u-mob-gap-4">
                <h1 id="page-title" class="lt-page-title">Maison LeKinff</h1>
                <h2>L’Adresse Créative à Privatiser, Paris 14ème</h2>
-               <div class="lt-frame u-max-w-480">
+               <div class="lt-frame u-max-w-480 u-tab-max-w-unset">
                   <p id="jumbo-caption"></p>
                   <p id="jumbo-description">about content</p>
                   <p id="jumbo-description-2">about content</p>
@@ -25,7 +25,7 @@ export default function Jumbo() {
                </div>
           </div>
        </div>
-      <div class="flap flap-60">
+      <div class="flap flap-60 u-min-h-0">
           <div class="splide u-w-100" aria-label="Splide Basic HTML Example">
               <div class="splide__track u-h-100">
                   <ul class="splide__list">

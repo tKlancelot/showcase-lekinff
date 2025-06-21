@@ -25,7 +25,8 @@ h1,h2,h3{
 }
 
 h1{
-    font-size: var(--font-size-7);
+    /* font-size: var(--font-size-7); */
+    font-size: clamp(var(--font-size-6), 5vw, var(--font-size-7));
     line-height: calc(var(--font-size-7) * 1.5);
 }
 
