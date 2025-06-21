@@ -75,5 +75,44 @@ export async function HomeController() {
       }
   });
 
+  // CREATE MESSAGE
+  let createMessageForm = document.getElementById('send-message-form');
+
+  createMessageForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(createMessageForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      if (!name || !email || !message) {
+          alert("Merci de remplir tous les champs !");
+          return;
+      }
+
+      try {
+          const response = await fetch(`${apiUrl}/api/contact`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ name, email, message })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              alert(data.message); // "Votre message a été envoyé avec succès."
+              createMessageForm.reset();
+          } else {
+              alert(data.message || "Erreur lors de l'envoi du message.");
+          }
+
+      } catch (err) {
+          console.error("Erreur réseau :", err);
+          alert("Erreur lors de l'envoi. Veuillez réessayer plus tard.");
+      }
+  });
 
 }

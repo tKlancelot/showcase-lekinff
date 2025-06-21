@@ -11,10 +11,28 @@
 </head>
 <body>
   <div id="app"></div>
-  <modal-dialog id="modal-test" modal-title="My title" class="modal modal-color-scheme-primary" max-width="480">
+  <modal-dialog id="modal-test" modal-title="Contact us" class="modal modal-color-scheme-primary" max-width="512">
     <div class="lt-frame u-gap-4">
-      <p class="u-min-h-160">modal test</p>
-      <button class="btn btn-color-scheme-primary" data-modal-dismiss>Fermer</button>
+        <!-- SEND A MESSAGE FORM  -->
+
+        <form id="send-message-form" class="lt-frame form" action="/api/contact" method="POST">
+            <div class="form-row u-col-row u-gap-2">
+                <input class="input u-col-6" type="text" name="name" id="name" placeholder="Name">
+                <input class="input u-col-6" type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <!-- <div class="form-row">
+            </div> -->
+            <div class="form-row">
+                <textarea class="textarea u-min-h-160" name="message" id="message" placeholder="Message"></textarea>
+            </div>
+            <div class="form-row u-p-c-end">
+                <button class="btn btn-color-scheme-primary" type="submit">Send</button>
+            </div>
+            
+        </form>
+
+      <!-- <p class="u-min-h-160">modal test</p> -->
+      <!-- <button class="btn btn-color-scheme-primary" data-modal-dismiss>Fermer</button> -->
     </div>
   </modal-dialog>
   <modal-dialog id="modal-login" modal-title="Login" class="modal modal-color-scheme-primary" max-width="480">

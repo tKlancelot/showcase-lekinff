@@ -3,6 +3,7 @@ import { ModalService } from './serviceModals.js';
 import { handleRole, initPageSettings } from './js/uiUtils.js';
 import { ModalDialog } from './webcomponents/modalDialog.js';
 import { CustomSelect } from './webcomponents/customSelect.js';
+import { CustomTabs } from './webcomponents/customTabs.js';
 import { logout } from './js/userUtils.js';
 
 const app = document.getElementById('app');

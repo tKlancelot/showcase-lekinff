@@ -8,43 +8,80 @@ export default function Admin() {
     ${Navbar()}
     <main class="lt-page u-p-8 u-overflow-y-auto">
       <div class="lt-frame u-w-100">
-        <h2 class="lt-page-title">Settings</h2>
-        <div id="settings" class="lt-frame">
-            <div class="settings-loading"><h2>Chargement des paramètres...</h2></div>
-            <div class="settings-table">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Key</th>
-                            <th style="width: 60%;">Value</th>
-                            <th>Type</th>
-                            <th class="u-text-a-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>   
-        </div> 
-        <h2 class="lt-page-title">Users</h2>
-        <div id="users-admin" class="lt-frame u-w-100">
-            <div id="users-admin-no-access">You don't have access to this content</div>
-            <div id="users-admin-access" class="lt-frame" style="display: none;">
-                <h2>Admin your users</h2>
-                <table id="user-table" class="table">
-                    <thead>
-                        <tr>
-                            <th class="u-text-a-center" style="min-width: 40px;">id</th>
-                            <th style="min-width: 144px;">username</th>
-                            <th>role</th>
-                            <th>main picture</th>
-                            <th>action</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+
+
+        <lt-tabs data-id="tabs-1">
+            <div class="lt-tab-header">
+                <div class="lt-tab-item">
+                    <span>Page Settings</span>
+                </div>
+                <div class="lt-tab-item">
+                    <span>Users</span>
+                </div>
+                <div class="lt-tab-item">
+                    <span>Contact Messages</span>
+                </div>
             </div>
-        </div>
+            <div class="lt-tab-content">
+                <div class="lt-tab-panel">
+                    <div id="settings" class="lt-frame">
+                        <div class="settings-loading"><h2>Chargement des paramètres...</h2></div>
+                        <div class="settings-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="u-text-a-center" style="min-width: 40px;width: 40px;">Id</th>
+                                        <th>Key</th>
+                                        <th style="width: 60%;">Value</th>
+                                        <th>Type</th>
+                                        <th class="u-text-a-center" style="width: 160px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>   
+                    </div> 
+                </div>
+                <div class="lt-tab-panel">
+                    <div id="users-admin" class="lt-frame u-w-100">
+                        <div id="users-admin-no-access">You don't have access to this content</div>
+                        <div id="users-admin-access" class="lt-frame" style="display: none;">
+                            <table id="user-table" class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="u-text-a-center" style="min-width: 40px;width: 40px;">Id</th>
+                                        <th style="width: 160px;">username</th>
+                                        <th>role</th>
+                                        <th>main picture</th>
+                                        <th class="u-text-a-center" style="width: 160px;">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="lt-tab-panel">
+                    <div id="messages-admin" class="lt-frame u-w-100">
+                        <div id="messages-admin-no-access">You don't have access to this content</div>
+                        <div id="messages-admin-access" class="lt-frame" style="display: none;">
+                            <table id="contact-message-table" class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="u-text-a-center" style="min-width: 40px;width: 40px;">Id</th>
+                                        <th style="width: 160px;">username</th>
+                                        <th>email</th>
+                                        <th>message</th>
+                                        <th class="u-text-a-center" style="width: 160px;">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lt-tabs>
       </div>
     </main>
     ${Footer()}
@@ -60,7 +97,6 @@ export async function AdminController() {
     }
 
     // SETTINGS ADMIN 
-
     const settingsLoading = document.querySelector('.settings-loading');
 
     try {
@@ -97,7 +133,7 @@ export async function AdminController() {
                 }
 
                 settingElement.innerHTML = `
-                <td class="u-fw-bold">${setting.id}</td>
+                <td class="u-fw-bold u-text-a-center" style="min-width: 40px;">${setting.id}</td>
                 <td class="u-fw-bold">${setting.key}</td>
                 <td>${inputField}</td>
                 <td>${setting.type}</td>
@@ -160,6 +196,8 @@ export async function AdminController() {
                     body: formData
                 });
 
+
+
                 if (response.ok) {
                     console.log('Setting updated successfully');
                     alert('Paramètre mis à jour');
@@ -172,7 +210,7 @@ export async function AdminController() {
         }
     });
 
-    // delete function 
+    // DELETE SETTING
     document.addEventListener('click', async (event) => {
         if (event.target && event.target.classList.contains('delete-btn')) {
             const settingId = event.target.closest('tr').getAttribute('data-id');
@@ -197,7 +235,6 @@ export async function AdminController() {
     });
 
     // ADD SETTING
-    
     const form = document.getElementById('setting-form');
     const typeSelect = document.getElementById('type');  // <custom-select> remplace ici un simple select
     const imageUploadDiv = document.getElementById('image-upload');
@@ -227,53 +264,61 @@ export async function AdminController() {
         }
     });
 
-    // Soumettre le formulaire avec FormData
-    form.addEventListener('submit', async function(event) {
-        event.preventDefault();  // Empêche l'envoi normal du formulaire
+    // ADD SETTING
+    form.addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-        const key = document.getElementById('key').value;
-        const value = document.getElementById('value').value;
-        const type = document.getElementById('hiddenType').value; // Utilise la valeur du champ caché
-        const image = document.getElementById('image-settings').files[0];  // Récupérer l'image si elle existe
+    // Préparation du FormData
+    const formData = new FormData();
+    formData.append('key', document.getElementById('key').value);
+    formData.append('value', document.getElementById('value').value);
+    formData.append('type', document.getElementById('hiddenType').value);
 
-        // Créer un FormData pour envoyer les données du formulaire (y compris l'image si présente)
-        const formData = new FormData();
-        formData.append('key', key);
-        formData.append('value', value);
-        formData.append('type', type);  // Envoie le type depuis le custom-select
-        if (image) {
-            formData.append('image', image);
+    const image = document.getElementById('image-settings').files[0];
+    if (image) formData.append('image', image);
+
+    const token = getToken();
+
+    try {
+        const response = await fetch(`${apiUrl}/api/pagesettings`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
+        body: formData
+        });
+
+        // ✅ Succès
+        if (response.ok) {
+        alert('Le paramètre a été ajouté avec succès.');
+        form.reset();
+        imageUploadDiv.style.display = 'none';
+        window.location.reload();
+        return;
         }
 
-        console.log(formData);
-
-        // Envoyer les données au backend
-        try {
-            const response = await fetch(`${apiUrl}/api/pagesettings`, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                },
-                body: formData
-            });
-
-            if (response.ok) {
-                alert('Le paramètre a été ajouté avec succès.');
-                // Optionnel : Réinitialiser le formulaire après soumission
-                form.reset();
-                imageUploadDiv.style.display = 'none';  // Cacher l'input image après soumission
-                window.location.reload();
-            } else {
-                console.error('Erreur lors de l\'ajout du paramètre:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Erreur lors de la soumission du formulaire:', error);
+        // ❌ Échec - Token expiré
+        if (response.status === 401) {
+        alert('Session expirée. Veuillez vous reconnecter.');
+        localStorage.removeItem('token');
+        window.location.href = '/login.html';
+        return;
         }
+
+        // ❌ Autres erreurs
+        const errorText = await response.text();
+        console.error('Erreur API :', response.status, errorText);
+        alert('Erreur lors de l’ajout du paramètre. Veuillez réessayer.');
+    } catch (error) {
+        // ❌ Erreur réseau / fetch
+        console.error('Erreur réseau :', error);
+        alert('Erreur réseau lors de la soumission du formulaire.');
+    }
     });
 
 
-    // USER ADMIN 
 
+    // USER ADMIN 
     let noAccess = document.getElementById('users-admin-no-access');
     let access = document.getElementById('users-admin-access');
 
@@ -294,7 +339,7 @@ export async function AdminController() {
                         <td class="u-fw-bold">${user.username}</td>
                         <td>${user.role}</td>
                         <td><div class="lt-avatar"><img class="lt-avatar-img" src="${apiUrl}/uploads/${user.mainPicture}"/></div></td>
-                        <td><button class="btn btn-variant-back-office" data-user-id="${user.id}" data-user-username="${user.username}">Delete</button></td>
+                        <td class="u-p-i-center"><button class="btn btn-variant-back-office delete-user" data-user-id="${user.id}" data-user-username="${user.username}">Delete</button></td>
                     `;
                     userTable.querySelector('tbody').appendChild(row);
                 });
@@ -302,9 +347,9 @@ export async function AdminController() {
 
     }
 
-    // delete users 
+    // DELETE USER
     document.addEventListener('click', async (event) => {
-        if (event.target && event.target.classList.contains('btn-variant-back-office')) {
+        if (event.target && event.target.classList.contains('delete-user')) {
             const userId = event.target.getAttribute('data-user-id');
             const username = event.target.getAttribute('data-user-username');
 
@@ -406,6 +451,65 @@ export async function AdminController() {
             reader.readAsDataURL(file);
         }
     });
+
+
+    // FIND ALL CONTACT MESSAGES 
+
+    let messageNoAccess = document.getElementById('messages-admin-no-access');
+    let messageAccess = document.getElementById('messages-admin-access');
+    let messageTable = document.getElementById('contact-message-table');
+
+    fetch(`${apiUrl}/api/contact`, {
+        headers: {
+            'Authorization': `Bearer ${getToken()}`
+        }
+    })
+    .then(res => res.json())
+    .then(messages => {
+        if (messages.data.length === 0) {
+            messageNoAccess.style.display = 'block';
+            messageAccess.style.display = 'none';
+        } else {
+            messageNoAccess.style.display = 'none';
+            messageAccess.style.display = 'block';
+            messages.data.forEach(message => {
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${message.id}</td>
+                    <td>${message.name}</td>
+                    <td>${message.email}</td>
+                    <td>${message.message}</td>
+                    <td class="u-p-i-center"><button class="btn btn-variant-back-office" data-message-id="${message.id}">Delete</button></td>
+                `;
+                messageTable.querySelector('tbody').appendChild(row);
+            });
+        }
+    });
+
+    // HANDLE DELETE 
+    messageTable.addEventListener('click', async (e) => {
+        if (e.target.classList.contains('btn-variant-back-office')) {
+            const messageId = e.target.dataset.messageId;
+            try {
+                const response = await fetch(`${apiUrl}/api/contact/${messageId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${getToken()}`
+                    }
+                });
+                if (response.ok) {
+                    alert('Message deleted successfully');
+                    window.location.reload();
+                } else {
+                    alert('Error deleting message');
+                }
+            } catch (error) {
+                console.error('Error deleting message:', error);
+                alert('Error deleting message');
+            }
+        }
+    });
+
 
 
 }

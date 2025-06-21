@@ -1,5 +1,5 @@
 .table{
-    --table-head-bg-color: var(--color-primary);
+    --table-head-bg-color: var(--color-primary-opacity-40);
     --table-collapse: collapse;
     width: 100%;
     border-collapse: var(--table-collapse);

@@ -17,7 +17,7 @@ export default function Jumbo() {
                       <i class="icon lt-icon-send icon-size-lg"></i>
                   </button>
                   <button class="btn btn-size-lg btn-outline u-min-w-120" id="btn-textured" data-modal-ref="modal-test">
-                      <span>En savoir plus</span>
+                      <span>Contact us</span>
                       <i class="icon lt-icon-organisms icon-size-lg"></i>
                   </button>
                </div>
