@@ -52,7 +52,6 @@ export default function Admin() {
                                         <th class="u-text-a-center" style="min-width: 40px;width: 40px;">Id</th>
                                         <th style="width: 160px;">username</th>
                                         <th>role</th>
-                                        <th>main picture</th>
                                         <th class="u-text-a-center" style="width: 160px;">action</th>
                                     </tr>
                                 </thead>
@@ -335,10 +334,10 @@ export async function AdminController() {
                     if(user.role === 'super_admin') return;
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td class="u-text-a-center">${user.id}</td>
+                        <td class="u-text-a-center" style="min-width: 40px;width: 40px;">${user.id}</td>
+                        <td style="width: 160px;">${user.role}</td>
                         <td class="u-fw-bold">${user.username}</td>
-                        <td>${user.role}</td>
-                        <td><div class="lt-avatar"><img class="lt-avatar-img" src="${apiUrl}/uploads/${user.mainPicture}"/></div></td>
+
                         <td class="u-p-i-center"><button class="btn btn-variant-back-office delete-user" data-user-id="${user.id}" data-user-username="${user.username}">Delete</button></td>
                     `;
                     userTable.querySelector('tbody').appendChild(row);
@@ -346,6 +345,8 @@ export async function AdminController() {
             });
 
     }
+
+    // <td><div class="lt-avatar"><img class="lt-avatar-img" src="${apiUrl}/uploads/${user.mainPicture}"/></div></td>
 
     // DELETE USER
     document.addEventListener('click', async (event) => {
@@ -475,7 +476,7 @@ export async function AdminController() {
             messages.data.forEach(message => {
                 let row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${message.id}</td>
+                    <td class="u-text-a-center" style="min-width: 40px;width: 40px;">${message.id}</td>
                     <td>${message.name}</td>
                     <td>${message.email}</td>
                     <td>${message.message}</td>

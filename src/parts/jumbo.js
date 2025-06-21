@@ -15,12 +15,12 @@ export default function Jumbo() {
                     <a href="https://native-spaces.com/fr/venue/64761" target="_blank">
                         <button class="btn btn-gradient u-min-w-120">
                             <span>Réserver sur native Spaces</span>
-                            <i class="icon lt-icon-send icon-size-lg"></i>
+                            <i class="icon lt-icon-booking icon-size-lg"></i>
                         </button>
                     </a>
                     <button class="btn btn-outline u-min-w-120" id="btn-textured" data-modal-ref="modal-test">
                         <span>Contact us</span>
-                        <i class="icon lt-icon-send icon-size-lg"></i>
+                        <i class="icon lt-icon-envelope icon-size-lg"></i>
                     </button>
                </div>
           </div>
