@@ -12,14 +12,16 @@ export default function Jumbo() {
                   <p id="jumbo-description-2">about content</p>
                </div>
                <div class="lt-stack u-gap-4">
-                  <button class="btn btn-gradient btn-size-lg u-min-w-120">
-                      <span>Réserver sur native Spaces</span>
-                      <i class="icon lt-icon-send icon-size-lg"></i>
-                  </button>
-                  <button class="btn btn-size-lg btn-outline u-min-w-120" id="btn-textured" data-modal-ref="modal-test">
-                      <span>Contact us</span>
-                      <i class="icon lt-icon-organisms icon-size-lg"></i>
-                  </button>
+                    <a href="https://native-spaces.com/fr/venue/64761" target="_blank">
+                        <button class="btn btn-gradient u-min-w-120">
+                            <span>Réserver sur native Spaces</span>
+                            <i class="icon lt-icon-send icon-size-lg"></i>
+                        </button>
+                    </a>
+                    <button class="btn btn-outline u-min-w-120" id="btn-textured" data-modal-ref="modal-test">
+                        <span>Contact us</span>
+                        <i class="icon lt-icon-send icon-size-lg"></i>
+                    </button>
                </div>
           </div>
        </div>
@@ -35,6 +37,12 @@ export default function Jumbo() {
                       </li>
                       <li class="splide__slide">
                           <img width="100%" height="100%" src="${base}assets/pictures/lekinff-outside.jpg" alt="">
+                      </li>
+                      <li class="splide__slide">
+                          <img width="100%" height="100%" src="${base}assets/pictures/lekinff-outside-2.jpg" alt="">
+                      </li>
+                      <li class="splide__slide">
+                          <img width="100%" height="100%" src="${base}assets/pictures/kitchen-design.jpg" alt="">
                       </li>
                   </ul>
               </div>
