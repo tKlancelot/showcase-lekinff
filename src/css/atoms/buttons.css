@@ -59,9 +59,6 @@
     border: var(--btn-border-outline);
     color: var(--btn-text-color-outline);
     --btn-bg-color-hover: oklch(from var(--btn-text-color-outline) l c h / 0.16);
-    line-height: var(--size-8);
-    padding-inline: var(--size-4);
-
     &:hover {
         background-color: var(--btn-bg-color-hover);
     }
@@ -131,5 +128,15 @@
     --btn-font-size: var(--font-size-2);
     line-height: var(--size-9);
     padding-inline: var(--size-5);
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .btn{
+        line-height: var(--size-7);
+        padding-inline: var(--size-2);
+    }
 
 }

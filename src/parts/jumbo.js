@@ -11,7 +11,7 @@ export default function Jumbo() {
                   <p id="jumbo-description">about content</p>
                   <p id="jumbo-description-2">about content</p>
                </div>
-               <div class="lt-stack u-gap-4">
+               <div class="lt-stack lt-stack-wrap u-gap-4 u-mob-gap-2">
                     <a href="https://native-spaces.com/fr/venue/64761" target="_blank">
                         <button class="btn btn-gradient u-min-w-120">
                             <span>Réserver sur native Spaces</span>

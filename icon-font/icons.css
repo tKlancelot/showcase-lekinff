@@ -1,7 +1,7 @@
 @font-face {
     font-family: "icons";
-    src: url("./icons.woff?a85424f345fdbe53f86d87617287cadd") format("woff"),
-url("./icons.woff2?a85424f345fdbe53f86d87617287cadd") format("woff2");
+    src: url("./icons.woff?d3d14494df3d24a5fcffc1b03e6e574a") format("woff"),
+url("./icons.woff2?d3d14494df3d24a5fcffc1b03e6e574a") format("woff2");
 }
 
 i[class^="lt-icon-"]:before, i[class*=" lt-icon-"]:before {
@@ -18,9 +18,12 @@ i[class^="lt-icon-"]:before, i[class*=" lt-icon-"]:before {
 .lt-icon-envelope:before {
     content: "\f101";
 }
-.lt-icon-caret-down:before {
+.lt-icon-close:before {
     content: "\f102";
 }
-.lt-icon-booking:before {
+.lt-icon-caret-down:before {
     content: "\f103";
+}
+.lt-icon-booking:before {
+    content: "\f104";
 }

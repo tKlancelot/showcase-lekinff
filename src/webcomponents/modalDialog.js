@@ -93,7 +93,18 @@ _render() {
 
   const modalContent = document.createElement("div");
   modalContent.className = `modal__content ${extraClass}`;
-  modalContent.style.maxWidth = `${maxWidth}px`;
+  function updateModalMaxWidth() {
+    let isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
+      modalContent.style.maxWidth = "320px";
+    } else {
+      modalContent.style.maxWidth = `${maxWidth}px`;
+    }
+  }
+
+  updateModalMaxWidth();
+
+  window.addEventListener("resize", updateModalMaxWidth);
 
   modalContent.innerHTML = `
     <div class="modal__header">
