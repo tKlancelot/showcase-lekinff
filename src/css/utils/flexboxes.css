@@ -47,3 +47,11 @@
 .u-flex-grow-1{
     flex-grow: 1;
 }
+
+@media screen and (max-width: 768px) {
+
+    .u-mob-a-j-start{
+        justify-content: start;
+    }
+
+}

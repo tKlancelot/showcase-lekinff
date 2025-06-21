@@ -155,12 +155,6 @@
     padding: var(--size-4);
 }
 
-/* LINE-HEIGHT  */
-
-.u-lh-2{
-    line-height:calc(var(--font-size-2) * 2);
-}
-
 /* TEXT ALIGN  */
 
 .u-text-a-center{
@@ -195,4 +189,13 @@
 
 .u-cursor-pointer{
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .u-mob-lh-1{
+        line-height:calc(var(--font-size-1) * 2);
+    }
+
 }

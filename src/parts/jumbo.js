@@ -1,12 +1,12 @@
 export default function Jumbo() {
   const base = import.meta.env.BASE_URL;
   return `
-    <div class="section jumbo u-w-100 flaps">
-       <div class="u-p-6 flap flap-40 u-a-j-center u-bg-gradient">
-           <div class="lt-frame u-gap-8">
+    <div class="section jumbo u-w-100 flaps u-bg-gradient">
+       <div class="flap flap-40 u-a-j-center u-mob-a-j-start">
+           <div class="lt-frame u-gap-8 u-mob-gap-4">
                <h1 id="page-title" class="lt-page-title">Maison LeKinff</h1>
                <h2>L’Adresse Créative à Privatiser, Paris 14ème</h2>
-               <div class="lt-frame u-lh-2 u-max-w-480">
+               <div class="lt-frame u-max-w-480">
                   <p id="jumbo-caption"></p>
                   <p id="jumbo-description">about content</p>
                   <p id="jumbo-description-2">about content</p>

@@ -10,6 +10,7 @@
     display: flex;
     height: 100%;
     flex-direction: row;
+    padding: var(--size-6);
     img{
         object-fit: cover;
     }
@@ -32,3 +33,15 @@
 }
 
 
+@media screen and (max-width: 768px) {
+
+    .flaps{
+        flex-direction: column;
+    }
+
+    .flap{
+        --flap-basis: 100%;
+        padding: var(--size-4);
+    }
+
+}
