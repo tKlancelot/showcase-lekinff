@@ -21,11 +21,17 @@
     line-height: 40px;
     font-weight: 300;
     color: var(--text-secondary);
+    font-family: var(--ff-secondary);
+    font-variant: small-caps;
+    letter-spacing: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover{
         color: var(--text-primary);
+    }
+    &.active{
+        color: var(--color-primary);
     }
 }
 

@@ -1,6 +1,6 @@
 import router from './router.js';
 import { ModalService } from './serviceModals.js';
-import { handleRole, initPageSettings } from './js/uiUtils.js';
+import { handleNavLinks, handleRole, initPageSettings } from './js/uiUtils.js';
 import { ModalDialog } from './webcomponents/modalDialog.js';
 import { CustomSelect } from './webcomponents/customSelect.js';
 import { CustomTabs } from './webcomponents/customTabs.js';
@@ -15,6 +15,7 @@ async function globalController() {
   handleRole();
   logout();
   initPageSettings();
+  handleNavLinks(location.pathname);
   console.log("✅ GlobalController loaded");
   
 }

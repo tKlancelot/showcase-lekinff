@@ -2,6 +2,7 @@ import Footer from '../parts/footer.js';
 import jumbo from '../parts/jumbo.js';
 import Navbar from '../parts/navbar.js';
 import { apiUrl } from '../js/config.js';
+import { toggleLoader } from '../js/uiUtils.js';
 
 export default function Home() {
   return `
@@ -42,39 +43,48 @@ export async function HomeController() {
     });
     splideInstance.mount();
   }
-  // let loginFrame = document.querySelector('#login');  
-  let loginForm = document.getElementById('login-form');
 
-  // gestion du formulaire de login 
+  let loginForm = document.getElementById('login-form');
 
   loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      toggleLoader(true);
+
       const formData = new FormData(loginForm);
       const username = formData.get('username');
       const password = formData.get('password');
 
-      // add username and password to formData
       formData.append('username', username);
       formData.append('password', password);
 
+      try {
+          const response = await fetch(`${apiUrl}/api/login`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(Object.fromEntries(formData))
+          });
 
-      const response = await fetch(`${apiUrl}/api/login`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(Object.fromEntries(formData))
-      });
-      const data = await response.json();
-      if (data.token) {
-          localStorage.setItem('token', data.token);
-          localStorage.setItem('role', data.data.role);
-          localStorage.setItem('username', data.data.username);
-          localStorage.setItem('userId', data.data.id);
-          window.location.href = '/admin';
+          const data = await response.json();
+
+          if (data.token) {
+              localStorage.setItem('token', data.token);
+              localStorage.setItem('role', data.data.role);
+              localStorage.setItem('username', data.data.username);
+              localStorage.setItem('userId', data.data.id);
+              window.location.href = '/admin';
+          } else {
+              alert('Échec de la connexion');
+          }
+      } catch (error) {
+          alert('Erreur réseau ou serveur');
+          console.error(error);
+      } finally {
+          toggleLoader(false);
       }
   });
-
   // CREATE MESSAGE
   let createMessageForm = document.getElementById('send-message-form');
 

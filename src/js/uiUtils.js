@@ -142,7 +142,9 @@ export const handleNavLinks = async (templatePath) => {
     navLinks.forEach(link => {
         link.classList.remove('active');
         let linkName = link.textContent.toLowerCase().split(' ').join('-');
+        (linkName === 'home') && (linkName = '');
         if (linkName === currentPage) {
+            console.log(linkName);
             link.classList.add('active');
         }
     });
@@ -166,6 +168,15 @@ export const initTooltips = async () => {
 };
 
 
+export function toggleLoader(show = true, selector = '#loader-overlay') {
+  const loader = document.querySelector(selector);
+  if (!loader) return;
 
+  if (show) {
+    loader.classList.add('show');
+  } else {
+    loader.classList.remove('show');
+  }
+}
 
 

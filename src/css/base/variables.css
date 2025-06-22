@@ -25,6 +25,7 @@
     --color-ui-white-opacity-60:rgba(255, 255, 255, 0.6);
     --color-ui-white-opacity-40:rgba(255, 255, 255, 0.4);
     --color-ui-white-opacity-20:rgba(255, 255, 255, 0.2);
+    --color-ui-white-opacity-10:rgba(255, 255, 255, 0.1);
 
     --color-ui-border:var(--color-ui-white-opacity-20);
 
