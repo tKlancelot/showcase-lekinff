@@ -4,11 +4,14 @@ import Navbar from '../parts/navbar.js';
 import { apiUrl } from '../js/config.js';
 import { toggleLoader } from '../js/utils/uiUtils.js';
 
-export default function Home() {
+export default async function Home() {
+
+  const jumboContent = await jumbo(); // ✅ attendre la promesse
+
   return `
     ${Navbar()}
     <main class="u-w-100 u-overflow-y-auto lt-stack u-h-100">
-      ${jumbo()}
+      ${jumboContent}
     </main>
     ${Footer()}
   `;

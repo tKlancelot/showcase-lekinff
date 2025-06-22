@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     action: async () => ({
-      content: Home(),
+      content:await Home(),
       controller: HomeController
     })
   },

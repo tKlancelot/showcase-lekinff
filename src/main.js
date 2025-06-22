@@ -34,13 +34,14 @@ async function handleRoute() {
   } catch (err) {
     console.warn("Route non trouvée, fallback vers Home");
     const homeModule = await import('./views/home.js');
-    app.innerHTML = homeModule.default();
-    
+    const content = await homeModule.default(); // ✅ AJOUT DU await
+    app.innerHTML = content;
+
     if (homeModule.HomeController) {
       await homeModule.HomeController();
     }
 
-    await globalController();  // <-- On l'appelle aussi dans le fallback
+    await globalController();
     history.replaceState(null, '', '/');
   }
 }
