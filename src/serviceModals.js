@@ -5,7 +5,7 @@ export class ModalService {
 
     initModals() {
         const modalTriggers = document.querySelectorAll('[data-modal-ref]');
-        console.log(`[modalService] ${modalTriggers.length} modal triggers found`);
+        // console.log(`[modalService] ${modalTriggers.length} modal triggers found`);
 
         modalTriggers.forEach(trigger => {
             const modalId = trigger.getAttribute('data-modal-ref');
@@ -16,9 +16,8 @@ export class ModalService {
                 return;
             }
 
-            // ⚠️ Retire les listeners existants avant d'en ajouter
-            trigger.replaceWith(trigger.cloneNode(true)); 
-            const freshTrigger = document.querySelector(`[data-modal-ref="${modalId}"]`);
+            const freshTrigger = trigger.cloneNode(true);
+            trigger.parentNode.replaceChild(freshTrigger, trigger);
 
             freshTrigger.addEventListener('click', () => {
                 const containerSelector = modal.getAttribute('container');

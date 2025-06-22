@@ -1,10 +1,10 @@
 import router from './router.js';
 import { ModalService } from './serviceModals.js';
-import { handleNavLinks, handleRole, initPageSettings } from './js/uiUtils.js';
+import { handleNavLinks, handleRole, initPageSettings } from './js/utils/uiUtils.js';
 import { ModalDialog } from './webcomponents/modalDialog.js';
 import { CustomSelect } from './webcomponents/customSelect.js';
 import { CustomTabs } from './webcomponents/customTabs.js';
-import { logout } from './js/userUtils.js';
+import { logout } from './js/utils/userUtils.js';
 
 const app = document.getElementById('app');
 

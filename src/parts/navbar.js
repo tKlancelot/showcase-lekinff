@@ -1,5 +1,5 @@
-import { getPageName } from "../js/routerUtils.js";
-import { getRole, getToken, getUsername } from "../js/userUtils.js";
+import { getPageName } from "../js/utils/routerUtils.js";
+import { getRole, getToken, getUsername } from "../js/utils/userUtils.js";
 
 export default function Navbar() {
 

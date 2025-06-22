@@ -8,8 +8,8 @@ export class CustomTabs extends HTMLElement {
     const tabItems = this.querySelectorAll('.lt-tab-item');
     const tabPanels = this.querySelectorAll('.lt-tab-panel');
 
-    console.log(tabItems);
-    console.log(tabPanels);
+    // console.log(tabItems);
+    // console.log(tabPanels);
 
     // add unique ID to each tab and panel
     tabItems.forEach((item, index) => {

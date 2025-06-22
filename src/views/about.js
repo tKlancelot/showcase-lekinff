@@ -7,6 +7,8 @@ export default function About() {
       <div class="lt-frame">
         <h1 class="lt-page-title">About</h1>
         <p id="key-test">This is the About page.</p>
+        <p id="new-key">This is the About page.</p>
+        <p id="new-new">This is the About page.</p>
       </div>
     </main>
   `;

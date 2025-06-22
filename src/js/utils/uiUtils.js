@@ -1,8 +1,5 @@
 // utils/uiUtils.js
-// import tippy from 'tippy.js';
-// import 'tippy.js/dist/tippy.css';
-// import { getRole, getToken } from "./userUtils";
-import { apiUrl } from './config.js';
+import { apiUrl } from '../config.js';
 import { getRole } from './userUtils.js';
 
 
@@ -19,64 +16,38 @@ export const handleRole = () => {
 
 
 export const initPageSettings = async () => {
-  const cachedSettings = localStorage.getItem('pageSettings');
-  if (cachedSettings) {
-    applySettings(JSON.parse(cachedSettings));
-    console.log('✅ Settings chargés depuis le cache');
-  }
-
   try {
     const response = await fetch(`${apiUrl}/api/pagesettings`);
     if (!response.ok) throw new Error('Failed to fetch');
     const settings = await response.json();
 
-    console.log(settings);
+    settings.forEach(setting => {
+      if (setting.key === 'meta_description') {
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+          metaDescription.setAttribute('content', setting.value);
+        }
+        return;
+      }
+      const elementId = setting.key.replace(/_/g, '-');
+      const element = document.getElementById(elementId);
+      if (!element) return;
 
-    localStorage.setItem('pageSettings', JSON.stringify(settings));
-    applySettings(settings);
-    console.log('✅ Settings chargés et appliqués');
+
+
+      // Choix automatique entre .value ou .textContent
+      if ('value' in element) {
+        element.value = setting.value;
+      } else {
+        element.textContent = setting.value;
+      }
+    });
+
+    console.log('✅ Settings chargés et appliqués dynamiquement');
   } catch (error) {
     console.error('❌ Erreur dans initPageSettings:', error);
   }
 };
-
-function applySettings(settings) {
-  const mapping = {
-    'page_background': 'jumbo-home',
-    'page_title': 'page-title',
-    'page_subtitle': 'page-subtitle',
-    'page_logotype': 'page-logotype',
-    'jumbo_description': 'jumbo-description',
-    'jumbo_description_2': 'jumbo-description-2',
-    'jumbo_caption': 'jumbo-caption',
-    'section_about_para': 'section-about-para',
-    'section_about_picture': 'section-about-picture',
-    'carousel_one': 'carousel-one',
-    'carousel_two': 'carousel-two',
-    'carousel_three': 'carousel-three',
-    'key_test': 'key-test',
-    'key_test_2': 'key-test-2',
-    'footer_copyright': 'footer-copyright',
-  };
-
-  settings.forEach(setting => {
-    const elementId = mapping[setting.key];
-    if (!elementId) return;
-    const element = document.getElementById(elementId);
-    if (!element) return;
-
-    if (setting.image) {
-      if (element.tagName === 'IMG') {
-        element.src = `${apiUrl}/uploads/${setting.image}`;
-        element.alt = setting.key;
-      } else {
-        element.style.backgroundImage = `url(${apiUrl}/uploads/${setting.image})`;
-      }
-    } else {
-      element.textContent = setting.value;
-    }
-  });
-}
 
 
 export const initializeBaseStructure = async () => {
@@ -144,7 +115,6 @@ export const handleNavLinks = async (templatePath) => {
         let linkName = link.textContent.toLowerCase().split(' ').join('-');
         (linkName === 'home') && (linkName = '');
         if (linkName === currentPage) {
-            console.log(linkName);
             link.classList.add('active');
         }
     });
@@ -173,8 +143,10 @@ export function toggleLoader(show = true, selector = '#loader-overlay') {
   if (!loader) return;
 
   if (show) {
+    console.log('showing loader');
     loader.classList.add('show');
   } else {
+    console.log('hiding loader');
     loader.classList.remove('show');
   }
 }

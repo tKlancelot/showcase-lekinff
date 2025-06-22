@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showcase Lekinff</title>
+    <title id="meta-title">Showcase Lekinff</title>
+    <!-- meta description  -->
+    <meta name="description" content="Showcase Lekinff">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="showcase.css">
     <link rel="stylesheet" href="/icon-font/icons.css">
@@ -68,7 +70,6 @@
                 <!-- Remplacement du select par custom-select -->
                 <custom-select id="type">
                     <option value="text">Texte</option>
-                    <option value="image">Image</option>
                     <option value="json">JSON</option>
                 </custom-select>
                 <!-- Champ caché pour envoyer la sélection -->
@@ -119,6 +120,32 @@
         
             <div class="form-row">
                 <button class="btn btn-color-scheme-primary" type="submit">Add user</button>
+            </div>
+        </form>
+    </modal-dialog>
+    <modal-dialog id="modal-edit-user" modal-title="Edit User" class="modal modal-color-scheme-primary" max-width="480">
+        <form id="edit-user-form" class="lt-frame u-min-w-400">
+            <input type="hidden" id="edit-user-id" name="id" />
+            <div class="form-row">
+                <input class="input" placeholder="Username" type="text" id="edit-user-username" name="username" required />
+            </div>
+            <div class="form-row">
+                <custom-select id="edit-role">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                    <option value="super_admin">Super Admin</option>
+                </custom-select>
+                <input type="hidden" id="hiddenEditRole" name="role" />
+            </div>
+            <div class="form-row">
+            <div class="lt-box form-row-upload">
+                <label for="edit-main-picture">Upload a new photo</label>
+                <input type="file" name="mainPicture" id="edit-main-picture" accept="image/*" />
+                <img id="edit-preview" class="u-w-100 u-mt-2" style="display:none; padding: 0.5rem;" />
+            </div>
+            </div>
+            <div class="form-row">
+            <button class="btn btn-color-scheme-primary" type="submit">Update user</button>
             </div>
         </form>
     </modal-dialog>
