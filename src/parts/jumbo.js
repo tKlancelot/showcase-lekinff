@@ -1,53 +1,14 @@
-export default function Jumbo() {
-  const base = import.meta.env.BASE_URL;
-  return `
-    <div class="section jumbo u-w-100 flaps u-bg-gradient">
-       <div class="flap flap-40 u-a-j-center u-mob-a-j-start">
-           <div class="lt-frame u-gap-8 u-mob-gap-4">
-               <h1 id="page-title" class="lt-page-title">Maison LeKinff</h1>
-               <h2>L’Adresse Créative à Privatiser, Paris 14ème</h2>
-               <div class="lt-frame u-max-w-480 u-tab-max-w-unset">
-                  <p id="jumbo-caption"></p>
-                  <p id="jumbo-description">about content</p>
-                  <p id="jumbo-description-2">about content</p>
-               </div>
-               <div class="lt-stack lt-stack-wrap u-gap-4 u-mob-gap-2">
-                    <a href="https://native-spaces.com/fr/venue/64761" target="_blank">
-                        <button class="btn btn-gradient u-min-w-120">
-                            <span>Réserver sur native Spaces</span>
-                            <i class="icon lt-icon-booking icon-size-lg"></i>
-                        </button>
-                    </a>
-                    <button class="btn btn-outline u-min-w-120" id="btn-textured" data-modal-ref="modal-test">
-                        <span>Contact us</span>
-                        <i class="icon lt-icon-envelope icon-size-lg"></i>
-                    </button>
-               </div>
-          </div>
-       </div>
-      <div class="flap flap-60 u-min-h-0">
-          <div class="splide u-w-100" aria-label="Splide Basic HTML Example">
-              <div class="splide__track u-h-100">
-                  <ul class="splide__list">
-                      <li class="splide__slide">
-                          <img width="100%" height="100%" src="${base}assets/pictures/lekinff-living.jpg" alt="">
-                      </li>
-                      <li class="splide__slide">
-                          <img width="100%" height="100%" src="./assets/pictures/lekinff-stairs.jpg" alt="">
-                      </li>
-                      <li class="splide__slide">
-                          <img width="100%" height="100%" src="${base}assets/pictures/lekinff-outside.jpg" alt="">
-                      </li>
-                      <li class="splide__slide">
-                          <img width="100%" height="100%" src="${base}assets/pictures/lekinff-outside-2.jpg" alt="">
-                      </li>
-                      <li class="splide__slide">
-                          <img width="100%" height="100%" src="${base}assets/pictures/kitchen-design.jpg" alt="">
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-    </div>
-  `;
+export default async function Jumbo() {
+  const base = import.meta.env.BASE_URL || '/';
+  try {
+    const response = await fetch(`${base}parts/jumbo.html`);
+    if (!response.ok) {
+      console.error('Erreur de chargement de jumbo.html');
+      return '<div>Erreur lors du chargement du composant Jumbo.</div>';
+    }
+    return await response.text();
+  } catch (err) {
+    console.error('Erreur réseau pour jumbo.html :', err);
+    return '<div>Erreur réseau</div>';
+  }
 }
