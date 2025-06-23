@@ -1,6 +1,7 @@
 import Home, { HomeController } from './views/home.js';
 import About, { AboutController } from './views/about.js';
 import Admin, { AdminController } from './views/admin.js';
+import UniversalRouter from 'universal-router';
 
 const routes = [
   {
