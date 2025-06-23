@@ -26,12 +26,9 @@ export async function AdminController() {
         return;
     }
 
-    // SETTINGS ADMIN 
-    document.addEventListener('DOMContentLoaded', () => {
-        initSettings();
-        initUsers();
-        initMessages();
-    });
+    initSettings();
+    initUsers();
+    initMessages();
 
 
 
