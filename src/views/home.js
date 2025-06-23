@@ -2,6 +2,7 @@ import Footer from '../parts/footer.js';
 import Navbar from '../parts/navbar.js';
 import { apiUrl } from '../js/config.js';
 import { toggleLoader } from '../js/utils/uiUtils.js';
+import { loadHtml } from '../js/utils/loadHtml.js';
 
 export default async function Home() {
 
