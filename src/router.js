@@ -1,4 +1,3 @@
-import UniversalRouter from 'universal-router';
 import Home, { HomeController } from './views/home.js';
 import About, { AboutController } from './views/about.js';
 import Admin, { AdminController } from './views/admin.js';
@@ -7,36 +6,34 @@ const routes = [
   {
     path: '/',
     action: async () => ({
-      content:await Home(),
+      content: await Home(), // 🔁 toutes les vues sont async
       controller: HomeController
     })
   },
   {
     path: '/about',
     action: async () => ({
-      content: About(),
+      content: await About(),
       controller: AboutController
     })
   },
   {
     path: '/admin',
     action: async () => ({
-      content: Admin(),
+      content: await Admin(),
       controller: AdminController
     })
   },
   {
     path: '(.*)',
-    action: async ({ pathname }) => {
-        history.replaceState(null, '', '/');  // change l’URL sans reload
-        return {
-        content: Home(),
+    action: async () => {
+      const fallbackContent = await Home();
+      return {
+        content: fallbackContent,
         controller: HomeController
-        };
+      };
     }
   }
 ];
 
-const router = new UniversalRouter(routes);
-
-export default router;
+export default new UniversalRouter(routes);
